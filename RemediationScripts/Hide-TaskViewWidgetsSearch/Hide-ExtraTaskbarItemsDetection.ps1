@@ -1,4 +1,4 @@
-$Version = "v1.3"
+$Version = "v1.4"
 $Success = $false
 
 Write-Host "Starting detection script $Version"

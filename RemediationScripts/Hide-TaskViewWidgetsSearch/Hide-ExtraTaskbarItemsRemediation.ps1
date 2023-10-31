@@ -1,4 +1,4 @@
-$Version = "v1.3"
+$Version = "v1.4"
 $ChangesMade = $false
 
 Write-Host "Starting remediation script $Version"
