@@ -1,18 +1,7 @@
 $Version = "v1.3"
 $Success = $false
 
-$directory = "C:\ProgramData\Hide-TaskbarItems"
-if (-not (Test-Path $directory)) {
-    New-Item -ItemType Directory -Path $directory
-}
-
-function Write-Log {
-    param ([string]$Message)
-    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    "$timestamp - $Message" | Out-File -FilePath "$Directory\Detection.txt" -Append
-}
-
-Write-Log "Starting detection script $Version"
+Write-Host "Starting detection script $Version"
 
 function Test-RegistryValue {
     param (
@@ -40,16 +29,16 @@ foreach ($check in $checks) {
         if ((Get-ItemProperty -Path $check.Path | Select-Object -ExpandProperty $check.Value) -eq 0) {
             $Success = $true
         } else {
-            Write-Log $check.Message
+            Write-Host $check.Message
             exit 1
         }
     } else {
-        Write-Log "$($check.Message) - Not found"
+        Write-Host "$($check.Message) - Not found"
         exit 1
     }
 }
 
 if ($Success) {
-    Write-Log "Detection script found all required settings, exiting."
+    Write-Host "Detection script found all required settings, exiting."
     exit 0
 }
