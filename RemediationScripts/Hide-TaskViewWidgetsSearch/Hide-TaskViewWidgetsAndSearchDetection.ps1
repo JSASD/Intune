@@ -9,18 +9,7 @@ Hite the Task View Widgets and search icons in the task bar
 Modified by Quinn Henry for JSASD
 #> 
 
-# Custom logging function
-function Write-Log {
-    param (
-        [Parameter(Mandatory=$true)]
-        [string] $Message
-    )
-
-    $logFilePath = "$($env:ProgramData)\Microsoft\RemoveW11Bloatware\RemoveW11Bloatware.log"
-    Add-Content -Path $logFilePath -Value "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss'): $Message"
-}
-
-Write-Log -Message "Hide-TaskViewWidgetsAndSearchDetection.ps1 - $Version"
+Write-Host $Version
 
 function Test-RegistryValue {
     param (
@@ -66,4 +55,5 @@ If(Test-RegistryValue -Path "$regPath\Search" -Value $showSearch){
     }
 }
 
+Write-Host "None are found, exiting as successful..."
 exit 0
