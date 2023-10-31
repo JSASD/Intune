@@ -1,7 +1,5 @@
-# Checks if Widgets button, Task View Button and Search bar are disabled on Windows 11 machines
-# JSASD Technology Department
-
-$Version = "v1.1"
+$Version = "v1.3"
+$ChangesMade = $false
 
 $directory = "C:\ProgramData\Hide-TaskbarItems"
 if (-not (Test-Path $directory)) {
@@ -42,8 +40,13 @@ foreach ($check in $checks) {
         if ((Get-ItemProperty -Path $check.Path | Select-Object -ExpandProperty $check.Value) -ne 0) {
             Set-ItemProperty -Path $check.Path -Name $check.Value -Value 0 -Force
             Write-Log $check.Message
+            $ChangesMade = $true
         }
     }
 }
 
-Write-Log "Remediation script completed successfully, exiting."
+if ($ChangesMade) {
+    Write-Log "Remediation complete, settings modified."
+} else {
+    Write-Log "Remediation complete, no changes necessary."
+}

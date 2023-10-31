@@ -1,7 +1,5 @@
-# Hides Widgets button, Task View Button and Search bar on Windows 11 machines
-# JSASD Technology Department
-
-$Version = "v1.1"
+$Version = "v1.3"
+$Success = $false
 
 $directory = "C:\ProgramData\Hide-TaskbarItems"
 if (-not (Test-Path $directory)) {
@@ -21,6 +19,7 @@ function Test-RegistryValue {
         [parameter(Mandatory=$true)]$Path,
         [parameter(Mandatory=$true)]$Value
     )
+    
     try {
         Get-ItemProperty -Path $Path | Select-Object -ExpandProperty $Value -ErrorAction Stop | Out-Null
         return $true
@@ -31,26 +30,26 @@ function Test-RegistryValue {
 
 $regPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion"
 $checks = @(
-    @{ Path="$regPath\Explorer\Advanced"; Value="ShowTaskViewButton"; Message="Show Task View Button is active" },
-    @{ Path="$regPath\Explorer\Advanced"; Value="TaskbarDa"; Message="Show Widgets is active" },
-    @{ Path="$regPath\Search"; Value="SearchboxTaskbarMode"; Message="Show Search Button is active" }
+    @{ Path="$regPath\Explorer\Advanced"; Value="ShowTaskViewButton"; Message="Task view active." },
+    @{ Path="$regPath\Explorer\Advanced"; Value="TaskbarDa"; Message="Widgets button active" },
+    @{ Path="$regPath\Search"; Value="SearchboxTaskbarMode"; Message="Search active" }
 )
-
-$exitCode = 0
 
 foreach ($check in $checks) {
     if (Test-RegistryValue -Path $check.Path -Value $check.Value) {
-        if ((Get-ItemProperty -Path $check.Path | Select-Object -ExpandProperty $check.Value) -ne 0) {
+        if ((Get-ItemProperty -Path $check.Path | Select-Object -ExpandProperty $check.Value) -eq 0) {
+            $Success = $true
+        } else {
             Write-Log $check.Message
-            $exitCode = 1
+            exit 1
         }
+    } else {
+        Write-Log "$($check.Message) - Not found"
+        exit 1
     }
 }
 
-if ($exitCode -eq 1) {
-    Write-Log "At least one feature is active, exiting as unsuccessful..."
-    exit 1
-} else {
-    Write-Log "None are found, exiting as successful..."
+if ($Success) {
+    Write-Log "Detection script found all required settings, exiting."
     exit 0
 }
