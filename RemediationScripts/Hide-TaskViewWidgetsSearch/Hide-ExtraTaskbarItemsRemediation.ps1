@@ -1,7 +1,14 @@
-$Version = "v1.4"
+$Version = "v1.5"
 $ChangesMade = $false
+$ScriptFailed = $false
 
-Write-Host "Starting remediation script $Version"
+function Write-Log {
+    param ([string]$Message)
+    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    Write-Host "[ $timestamp ]   $Message"
+}
+
+Write-Log "Starting remediation script $Version"
 
 function Test-RegistryValue {
     param (
@@ -13,6 +20,8 @@ function Test-RegistryValue {
         Get-ItemProperty -Path $Path | Select-Object -ExpandProperty $Value -ErrorAction Stop | Out-Null
         return $true
     } catch {
+        Write-Log "Failed to check registry value: $Path\$Value"
+        $ScriptFailed = $true
         return $false
     }
 }
@@ -27,15 +36,25 @@ $checks = @(
 foreach ($check in $checks) {
     if (Test-RegistryValue -Path $check.Path -Value $check.Value) {
         if ((Get-ItemProperty -Path $check.Path | Select-Object -ExpandProperty $check.Value) -ne 0) {
-            Set-ItemProperty -Path $check.Path -Name $check.Value -Value 0 -Force
-            Write-Host $check.Message
-            $ChangesMade = $true
+            try {
+                Set-ItemProperty -Path $check.Path -Name $check.Value -Value 0 -Force
+                Write-Log $check.Message
+                $ChangesMade = $true
+            } catch {
+                Write-Log "Failed to set registry value: $check.Path\$check.Value"
+                $ScriptFailed = $true
+            }
         }
     }
 }
 
-if ($ChangesMade) {
-    Write-Host "Remediation complete, settings modified."
+if ($ScriptFailed) {
+    Write-Log "Script failed."
+    exit 1
+} elseif ($ChangesMade) {
+    Write-Log "Remediation complete, settings modified."
+    exit 0
 } else {
-    Write-Host "Remediation complete, no changes necessary."
+    Write-Log "Remediation complete, no changes necessary."
+    exit 0
 }
