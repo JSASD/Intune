@@ -1,4 +1,4 @@
-$Version = "v1.5"
+$Version = "v1.6"
 $Success = $false
 
 function Write-Log {

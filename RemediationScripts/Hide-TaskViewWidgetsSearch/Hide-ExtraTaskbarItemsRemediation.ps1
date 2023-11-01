@@ -1,4 +1,4 @@
-$Version = "v1.5"
+$Version = "v1.6"
 $ChangesMade = $false
 $ScriptFailed = $false
 
@@ -36,15 +36,13 @@ $checks = @(
 foreach ($check in $checks) {
     if (Test-RegistryValue -Path $check.Path -Value $check.Value) {
         if ((Get-ItemProperty -Path $check.Path | Select-Object -ExpandProperty $check.Value) -ne 0) {
-            try {
-                Set-ItemProperty -Path $check.Path -Name $check.Value -Value 0 -Force
-                Write-Log $check.Message
-                $ChangesMade = $true
-            } catch {
-                Write-Log "Failed to set registry value: $check.Path\$check.Value"
-                $ScriptFailed = $true
-            }
+            Set-ItemProperty -Path $check.Path -Name $check.Value -Value 0 -Force
+            Write-Log $check.Message
         }
+    } else {
+        # Create the registry value if it doesn't exist
+        Set-ItemProperty -Path $check.Path -Name $check.Value -Value 0 -Force
+        Write-Log "Created and set $($check.Value) to 0"
     }
 }
 
