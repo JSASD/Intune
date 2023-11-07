@@ -2,6 +2,11 @@
 
 # Getting started
 
+## Prep the CSV file
+All your CSV file needs is two columns: `SerialNumber` and `NewGroupTag`.
+
+All rows will need to have information corresponding to existing devices added to Intune Autopilot, with their respective desired Group Tags.
+
 ## Install required module
 
 Install the Microsoft Graph Intune module:
