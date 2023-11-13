@@ -1,3 +1,4 @@
+# v1.0
 # Add-PrinterDriver.ps1
 # Adds the HP Universal PCL 6 v7.0.1 driver to Windows
 # JSASD Technology Department
@@ -36,4 +37,11 @@ if (Get-PrinterDriver -Name $PrinterDriverName -ErrorAction SilentlyContinue) {
         # Write an error if the driver was not added
         Write-Error "Failed to add the driver to the driver store."
     }
+}
+
+# At the end of the script
+if ($LASTEXITCODE -eq 0) {
+    exit 0  # Success
+} else {
+    exit 1603  # Generic error code for installation failure
 }
