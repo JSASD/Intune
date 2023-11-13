@@ -10,3 +10,13 @@ Other drivers can be used by modifying the scripts variables.
  - `$FolderName`: The folder path relative to the scripts location, without leading and trailing slashes (`/`)
  - `$FileName`: The file name of the `.inf` file to use for driver store importing
  - `$PrinterDriverName`: The name of the driver from the `.inf` file
+
+# Adding to Intune
+ - Use the [Microsoft-Win32-Content-Prep-Tool](https://github.com/Microsoft/Microsoft-Win32-Content-Prep-Tool) to package this directory into a `.intunewin` file
+ - Fill in the app information as necessary
+ - In **Program**
+   - `Install command`: `PowerShell.exe -ExecutionPolicy Bypass -File "Add-PrinterDriver.ps1"`
+   - `Uninstall command`: `PowerShell.exe -ExecutionPolicy Bypass -File "Remove-PrinterDriver.ps1"`
+   - Return codes:
+     - `0`: `Success`
+     - `1603`: `Failed`
