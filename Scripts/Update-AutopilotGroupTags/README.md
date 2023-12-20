@@ -2,10 +2,9 @@
 Updates group tags in mass for the autopilot service. Uses the serial number to match the device, and updates the group tag accordingly.
 
 Useful for new deployments where group tags are utilized to sort out devices by logical groups.
+<br>
 
-
-# Getting started
-
+# Usage
 ## Prep the CSV file
 All your CSV file needs is two columns: `SerialNumber` and `NewGroupTag`.
 
@@ -18,7 +17,7 @@ Install the Microsoft Graph Intune module:
 Install-Module Microsoft.MSGraph.Intune
 ```
 
-# Run the script
+## Run the script
 `cd` into the directory containing the script
 
 To receive a prompt to provide a CSV location, run it with:
