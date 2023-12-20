@@ -1,4 +1,8 @@
 # Update-AutopilotGroupTags
+Updates group tags in mass for the autopilot service. Uses the serial number to match the device, and updates the group tag accordingly.
+
+Useful for new deployments where group tags are utilized to sort out devices by logical groups.
+
 
 # Getting started
 
