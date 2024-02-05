@@ -16,10 +16,10 @@
 $regPath = "HKLM:\SYSTEM\CurrentControlSet\Control\CloudDomainJoin\TenantInfo"
 $TenantInfoPath = (Get-ChildItem -Path $regPath).Name
 $parentPart = Split-Path $TenantInfoPath -Parent
-$AADTenantID = Split-Path $TenantInfoPath -Leaf
+$EntraTenantID = Split-Path $TenantInfoPath -Leaf
 
 #Get AAD Name
-$AADName = (Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\CloudDomainJoin\TenantInfo\$AADTenantID" -Name DisplayName).DisplayName
+$EntraName = (Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\CloudDomainJoin\TenantInfo\$EntraTenantID" -Name DisplayName).DisplayName
 
 #Install Customer Workgroup
-Add-Computer -WorkGroupName "$AADName"
+Add-Computer -WorkGroupName "$EntraName"

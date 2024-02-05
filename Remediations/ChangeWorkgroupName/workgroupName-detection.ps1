@@ -1,6 +1,6 @@
 <#
     .SYNOPSIS 
-    Change Workgroup to Azure AD tenant name
+    Change Workgroup to Entra ID tenant name
 
     .DESCRIPTION
     Install:   C:\Windows\SysNative\WindowsPowershell\v1.0\PowerShell.exe -ExecutionPolicy Bypass -Command .\detection.ps1
@@ -16,12 +16,12 @@
 $regPath = "HKLM:\SYSTEM\CurrentControlSet\Control\CloudDomainJoin\TenantInfo"
 $TenantInfoPath = (Get-ChildItem -Path $regPath).Name
 $parentPart = Split-Path $TenantInfoPath -Parent
-$AADTenantID = Split-Path $TenantInfoPath -Leaf
-$AADName = (Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\CloudDomainJoin\TenantInfo\$AADTenantID" -Name DisplayName).DisplayName
+$EntraTenantID = Split-Path $TenantInfoPath -Leaf
+$EntraName = (Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\CloudDomainJoin\TenantInfo\$EntraTenantID" -Name DisplayName).DisplayName
 
 $CurrentWorkgroupName = (Get-WmiObject -Class Win32_ComputerSystem).Domain
 
-if($CurrentWorkgroupName -ne $AADName){
+if($CurrentWorkgroupName -ne $EntraName){
     return 0
 }else{
     return 1
