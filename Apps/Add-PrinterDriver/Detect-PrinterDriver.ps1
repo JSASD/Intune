@@ -3,7 +3,7 @@
 # Detects if the HP Universal PCL 6 v7.0.1 driver is added to Windows
 # JSASD Technology Department
 
-$PrinterDriverName = "HP Universal Printing PCL 6 (v7.0.1)"
+$PrinterDriverName = "Print Driver Name"
 
 $driverInstalled = Get-PrinterDriver -Name $PrinterDriverName -ErrorAction SilentlyContinue
 if ($driverInstalled) {

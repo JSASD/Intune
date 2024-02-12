@@ -4,7 +4,7 @@
 # JSASD Technology Department
 
 # Define the printer driver name as a variable
-$PrinterDriverName = "HP Universal Printing PCL 6 (v7.0.1)"
+$PrinterDriverName = "Print Driver Name"
 
 # Check if the printer driver is installed
 if (Get-PrinterDriver -Name $PrinterDriverName -ErrorAction SilentlyContinue) {

@@ -1,25 +1,25 @@
-# v1.0
+# v2.0
 # Add-PrinterDriver.ps1
-# Adds the HP Universal PCL 6 v7.0.1 driver to Windows
+# Adds the Konica Minolta 650iSeriesPCL Driver to Windows
 # JSASD Technology Department
 
-# Define the folder, file name, and printer driver name as variables
-$FolderName = "HpUniversal"
-$FileName = "hpcu255u.inf"
-$PrinterDriverName = "HP Universal Printing PCL 6 (v7.0.1)"
+
+# THESE MUST BE SET
+# Define the network path, file name, and printer driver name as variables
+$driverPath = "\\server\share\folder"
+$infFile = "printDriverFile.inf"
+$PrinterDriverName = "Print Driver Name"
+
 
 # Check if the printer driver is already installed
 if (Get-PrinterDriver -Name $PrinterDriverName -ErrorAction SilentlyContinue) {
     Write-Host "Printer driver '$PrinterDriverName' is already installed."
 } else {
-    # Construct the full path to the driver file
-    $driverPath = Join-Path -Path $PSScriptRoot -ChildPath $FolderName
-    $driverPath = Join-Path -Path $driverPath -ChildPath $FileName
-
     Write-Host "Driver path: $driverPath"
 
     # Attempt to add the driver to the driver store
-    $addDriverResult = & pnputil.exe /add-driver $driverPath
+    $addDriverResult = & pnputil.exe /add-driver "$driverPath\$infFile" *>&1
+    Write-Host "pnputil output: $addDriverResult"
 
     if ($addDriverResult -match "Driver package added successfully.") {
         Write-Host "Driver package added successfully. Installing driver..."

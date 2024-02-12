@@ -1,15 +1,13 @@
 # Add-PrinterDriver
-Adds the `HP Universal` print driver to the Windows Driver Store and installs the `HP Universal Printing PCL 6 (v7.0.1)` driver
+Adds a desired print driver via `.inf` file from a network share.
+
 
 # Usage
-This script can be run as is, provided it is in the same directory as the included `HpUniversal` folder.
+3 variables need to be set in order to use this:
+ - `$driverPath` [`Add-PrinterDriver.ps1`]
+ - `$infFile` [`Add-PrinterDriver.ps1`]
+ - `$PrinterDriverName` [`Add-PrinterDriver.ps1`, `Detect-PrinterDriver.ps1`, `Remove-PrinterDriver.ps1`]
 
-Other drivers can be used by modifying the scripts variables.
-
-## Modifiable variables
- - `$FolderName`: The folder path relative to the scripts location, without leading and trailing slashes (`/`)
- - `$FileName`: The file name of the `.inf` file to use for driver store importing
- - `$PrinterDriverName`: The name of the driver from the `.inf` file
 
 # Adding to Intune
  - Use the [Microsoft-Win32-Content-Prep-Tool](https://github.com/Microsoft/Microsoft-Win32-Content-Prep-Tool) to package this directory into a `.intunewin` file
@@ -20,3 +18,8 @@ Other drivers can be used by modifying the scripts variables.
    - Return codes:
      - `0`: `Success`
      - `1603`: `Failed`
+ - In **Detection rules**
+   - `Rules format`: `Use a custom detection script`
+     - `Script file`: *Upload the* `Detect-PrinterDriver.ps1` *file*
+     - `Run script as 32-bit...`: `No`
+     - `Enforce script signature...`: `No`
