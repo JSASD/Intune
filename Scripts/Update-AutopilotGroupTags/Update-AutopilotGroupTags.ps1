@@ -34,13 +34,15 @@ if ($PSCmdlet.ParameterSetName -eq "Help") {
 
 Clear-Host
 Set-ExecutionPolicy -ExecutionPolicy 'ByPass' -Scope 'Process' -Force -ErrorAction 'Stop' 
-$error.clear() ## this is the clear error history 
+$error.clear()
 
 
+# Begin actions
 Write-Host "========= Begin bulk update actions ================"
 Write-Host ""
 
 
+# Check if MSGraph module is installed
 $MGIModule = Get-module -Name "Microsoft.Graph.Intune" -ListAvailable
 Write-Host "Checking Microsoft.Graph.Intune is Installed or Not" -ForegroundColor Yellow
 If ($MGIModule -eq $null) {
@@ -83,7 +85,6 @@ if ($csvData.Count -eq 0) {
     Write-Host "The CSV file seems to be empty or the data isn't formatted as expected. Exiting script." -ForegroundColor Red
     exit
 }
-
 
 
 # Get Windows Autopilot device identities

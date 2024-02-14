@@ -11,14 +11,16 @@ All your CSV file needs is two columns: `SerialNumber` and `NewGroupTag`.
 All rows will need to have information corresponding to existing devices added to Intune Autopilot, with their respective desired Group Tags.
 
 ## Install required module
+The Microsoft Graph Intune modele is required for this script.
 
-Install the Microsoft Graph Intune module:
+Install it with:
 ```powershell
+# Must be run in PowerShell 5
 Install-Module Microsoft.MSGraph.Intune
 ```
 
 ## Run the script
-`cd` into the directory containing the script
+`cd` into the directory containing the script.
 
 To receive a prompt to provide a CSV location, run it with:
 ```powershell
@@ -30,7 +32,12 @@ To run it with arguments:
 .\Update-AutopilotGroupTags.ps1 -c .\example.csv  # Make sure to replace "example.csv" with your actual CSV file
 ```
 
-## Other command line parameters
+## Logging
+The default logging locations are:
+ - Success Log: `C:\windows\temp\success.log`
+ - Failed Log: `C:\windows\temp\failed.log`
+
+## Other command-line parameters
 There are other parameters available, to see them, run:
 ```powershell
 .\Update-AutopilotGroupTags.ps1 -h
