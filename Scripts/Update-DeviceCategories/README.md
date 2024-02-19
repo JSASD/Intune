@@ -40,7 +40,7 @@ Connect-MSGraph
 `cd` into the directory containing the script.
 
 Run the script with the required arguments: `-csvFilePath` and `-deviceCategory`.
-  - The CSV file path needs to be a direct path to the location of the CSV file
+  - The CSV file path needs to be the direct path to the location of the CSV file, it cannot be relative.
   - The device category needs to be the ID copied from the last section
 
 The script will run, and let you know how many were successful, and how many were skipped (not found).
