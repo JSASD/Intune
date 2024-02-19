@@ -53,5 +53,5 @@ The default logging locations are:
 ## Other command-line parameters
 There are other parameters available. To see them, run:
 ```powershell
-.\Update-AutopilotGroupTags.ps1 -h
+.\Update-DeviceCategories.ps1 -h
 ```
