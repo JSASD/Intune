@@ -6,6 +6,8 @@ Useful for already deployed laptops, where device categories are utilized and yo
 
 # Usage
 ## Prep the CSV file
+Change the `serials.csv.example` file to `serials.csv` (or a preferred name).
+
 As of now, the CSV file only contains one column: `SerialNumber`.
 
 All rows will need to have one serial number. So the file should just be a list of serials, with `SerialNumber` at the top. Ex:

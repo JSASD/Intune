@@ -6,6 +6,8 @@ Useful for new deployments where group tags are utilized to sort out devices by 
 
 # Usage
 ## Prep the CSV file
+Change the `serials.csv.example` file to `serials.csv` (or a preferred name).
+
 All your CSV file needs is two columns: `SerialNumber` and `NewGroupTag`.
 
 All rows will need to have information corresponding to existing devices added to Intune Autopilot, with their respective desired Group Tags.
