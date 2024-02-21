@@ -2,7 +2,7 @@
 # Sets a default background in Windows 11, this script and the background are copied using Stage-DesktopBackground.ps1
 # JSASD Technology Department
 
-$filepath = "C:\Users\Public\Pictures\Background.jpg"
+$filepath = "C:\Users\Public\Pictures\jsasd-background.jpg"
 
 $code = @'
 using System.Runtime.InteropServices;
