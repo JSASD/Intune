@@ -25,7 +25,7 @@ The Microsoft Graph Intune module is required for this script.
 Install it with
 ```powershell
 # Must be run in PowerShell 5
-Install-Module Microsoft.MSGraph.Intune
+Install-Module -Name Microsoft.Graph.Intune
 ```
 
 ## Get the device category ID from the Graph API
