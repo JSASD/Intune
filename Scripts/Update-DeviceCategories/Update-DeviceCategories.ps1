@@ -18,12 +18,12 @@ param (
 
 function Show-Help {
     "Usage:"
-    "    .\YourScriptName.ps1 -csvFilePath <path_to_csv>"
+    "    .\UpdateDeviceCategories.ps1 -csvFilePath <path_to_csv>"
     "Parameters:"
     "    -csvFilePath         The path to the CSV file to process. [Required]"
     "    -deviceCategory      The category ID to apply to the device [Required]"
     "    -successLogFilePath  The path to the success log file. [Optional]"
-    "    -skippedLogFilePath   The path to the skip log file. [Optional]"
+    "    -skippedLogFilePath  The path to the skip log file. [Optional]"
     "    -h                   Shows this help message."
     exit
 }
