@@ -1,3 +1,10 @@
+# Json file to check against
+$jsonFile = "$($ENV:LOCALAPPDATA)\Packages\MSTeams_8wekyb3d8bbwe\LocalCache\Microsoft\MSTeams\app_settings.json"
+
+# Parse JSON data
+$jsonData = Get-Content $jsonFile -Raw | ConvertFrom-Json
+
+
 # Check if Teams is running
 $teamsRunning = Get-Process ms-teams* -ErrorAction SilentlyContinue
 
@@ -8,9 +15,7 @@ if ($teamsRunning) {
 }
 
 
-$jsonData = Get-Content "$($ENV:LOCALAPPDATA)\Packages\MSTeams_8wekyb3d8bbwe\LocalCache\Microsoft\MSTeams\app_settings.json" -Raw | ConvertFrom-Json
-#$jsonData = Get-Content .\config.json -Raw | ConvertFrom-Json
-
+# Check the current value, modify if necessary
 if ($jsonData.open_app_in_background -eq $true) {
     Write-Output "App already set to open in background."
 } else {
