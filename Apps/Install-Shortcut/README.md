@@ -7,7 +7,9 @@ Installs a shortcut to any URL / program on the Windows public desktop.
 
 # Install-Shortcut.ps1
 ## Usage
-Change the values under `# CHANGE THE FOLLOWING #`:
+Script contents are all bundled into a function. An example call is at the bottom.
+
+The following function parameters can be set:
  - `$ShortcutName`: Friendly name of the shortcut, this is what it will be called on the desktop.
  - `$TargetPath`: The URL / path to the program you want to open.
  - `$IconStoragePath`: Where you want to locally store the icon for the shortcut, must be accessible by the script at runtime.
@@ -18,10 +20,10 @@ Run the script as normal, no arguments are needed.
 # Uninstall-Shortcut.ps1
 ## Usage
 tl;dr
- - The variables in this script are identical to those in `Install-Shortcut.ps1`
+ - The parameters available this script are identical to those that correspond in `Install-Shortcut.ps1`
  - Set them identically in this script in order to uninstall properly
 
-Change the values under `# CHANGE THE FOLLOWING#`:
+The following function parameters can be set:
  - `$ShortcutName`: Name of the shortcut on the desktop.
  - `$IconStoragePath`: Path to the icon that was copied to the local machine.
  - `$IconName`: Name of the icon in the local path.

@@ -2,47 +2,48 @@
 # Creates a Windows shortcut to anything you want, placing it on the public desktop
 # JSASD Technology Department
 
+function New-Shortcut {
+    param (
+        [string]$ShortcutName,
+        [string]$TargetPath,
+        [string]$IconStoragePath,
+        [string]$IconName
+    )
 
-########################
-# CHANGE THE FOLLOWING #
-########################
+    # Paths
+    $ShortcutPath = "C:\Users\Public\Desktop\$ShortcutName"
+    $IconPath = Join-Path -Path $IconStoragePath -ChildPath $IconName
 
-# Paths
-## Where the shortcut will be stored and named
-$ShortcutName = "Name of shortcut.lnk"
-## Where the shortcut points to
-$TargetPath = "https://path/to/your/link"
-## Place to copy icon to
-$IconStoragePath = "C:\ProgramData\YourProgram\Icons"
-## Name of icon in this folder
-$IconName = "Icon.ico"
+    # Get the directory where the script is running from
+    $ScriptPath = $PSScriptRoot
 
-#########################
-# DO NOT TOUCH THE REST #
-#########################
+    # Ensure the icon storage directory exists
+    If (-Not (Test-Path -Path $IconStoragePath)) {
+        New-Item -ItemType Directory -Path $IconStoragePath
+    }
 
+    # Construct the source icon path
+    $SourceIconPath = Join-Path -Path $ScriptPath -ChildPath $IconName
 
-## Where the shortcut will be stored and named
-$ShortcutPath = "$env:PUBLIC\Desktop\$ShortcutName"
-## What icon to use
-$IconPath = Join-Path -Path $IconStoragePath -ChildPath "$IconName"
+    # Ensure the source icon file exists before copying
+    If (-Not (Test-Path -Path $SourceIconPath)) {
+        Write-Error "The source icon file does not exist: $SourceIconPath"
+        return
+    }
 
-# Get the directory where the script is running from
-$ScriptPath = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
+    # Copy the icon to the specified path
+    Copy-Item -Path $SourceIconPath -Destination $IconPath -Force
 
-# Ensure the icon storage directory exists
-If (-Not (Test-Path -Path $IconStoragePath)) {
-    New-Item -ItemType Directory -Path $IconStoragePath
+    # Create the shortcut
+    $WScriptShell = New-Object -ComObject WScript.Shell
+    $Shortcut = $WScriptShell.CreateShortcut($ShortcutPath)
+    $Shortcut.TargetPath = $TargetPath
+    $Shortcut.IconLocation = $IconPath
+    $Shortcut.Save()
 }
 
-
-
-# Copy the icon to the specified path
-Copy-Item -Path "$ScriptPath\$IconName" -Destination $IconPath -Force
-
-# Create the shortcut
-$WScriptShell = New-Object -ComObject WScript.Shell
-$Shortcut = $WScriptShell.CreateShortcut($ShortcutPath)
-$Shortcut.TargetPath = $TargetPath
-$Shortcut.IconLocation = $IconPath
-$Shortcut.Save()
+# Example usage of the function
+New-Shortcut -ShortcutName "Name of shortcut.lnk" `
+             -TargetPath "https://www.jsasd.org" `
+             -IconStoragePath "C:\ProgramData\YourProgram\Icons" `
+             -IconName "Icon.ico"
