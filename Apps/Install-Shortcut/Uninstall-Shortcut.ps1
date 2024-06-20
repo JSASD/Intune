@@ -31,7 +31,6 @@ function Remove-Shortcut {
 
 # Example usage of the function
 Remove-Shortcut -ShortcutName "Your app.lnk" `
-                -ShortcutDestination "C:\Users\qhenry\Downloads" `
                 -IconDirectory "C:\ProgramData\YourApp"
 # To specify a custom destination for the shortcut:
 # Remove-Shortcut -ShortcutName "Your app.lnk" `
