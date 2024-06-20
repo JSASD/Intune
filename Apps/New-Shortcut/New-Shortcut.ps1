@@ -1,4 +1,4 @@
-# Install-Shortcut.ps1
+# New-Shortcut.ps1
 # Creates a Windows shortcut to anything you want, placing it on the public desktop
 # JSASD Technology Department
 
