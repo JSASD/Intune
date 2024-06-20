@@ -35,4 +35,8 @@ function Remove-Shortcut {
 Remove-Shortcut -ShortcutName "Your app.lnk" `
                 -IconStoragePath "C:\ProgramData\YourApp\Icons" `
                 -IconName "Icon.ico"
-                #-ShortcutDestination "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\YourApp"
+# To specify a custom destination for the shortcut:
+# Remove-Shortcut -ShortcutName "Your app.lnk" `
+#                 -IconStoragePath "C:\ProgramData\YourApp\Icons" `
+#                 -IconName "Icon.ico" `
+#                 -ShortcutDestination "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\YourApp"

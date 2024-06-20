@@ -44,8 +44,11 @@ function New-Shortcut {
 }
 
 # Example usage of the function
-New-Shortcut -ShortcutName "Your App.lnk" `
-             -TargetPath "https://www.jsasd.org" `
-             -IconStoragePath "C:\ProgramData\YourApp\Icons" `
-             -IconName "Icon.ico" `
-             #-ShortcutDestination "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\YourApp"
+Install-Shortcut -ShortcutName "Your app.lnk" `
+                -IconStoragePath "C:\ProgramData\YourApp\Icons" `
+                -IconName "Icon.ico"
+# To specify a custom destination for the shortcut:
+# Install-Shortcut -ShortcutName "Your app.lnk" `
+#                 -IconStoragePath "C:\ProgramData\YourApp\Icons" `
+#                 -IconName "Icon.ico" `
+#                 -ShortcutDestination "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\YourApp"
