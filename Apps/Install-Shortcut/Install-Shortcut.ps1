@@ -7,11 +7,12 @@ function New-Shortcut {
         [string]$ShortcutName,
         [string]$TargetPath,
         [string]$IconStoragePath,
-        [string]$IconName
+        [string]$IconName,
+        [string]$ShortcutDestination = "C:\Users\Public\Desktop"
     )
 
     # Paths
-    $ShortcutPath = "C:\Users\Public\Desktop\$ShortcutName"
+    $ShortcutPath = Join-Path -Path $ShortcutDestination -ChildPath $ShortcutName
     $IconPath = Join-Path -Path $IconStoragePath -ChildPath $IconName
 
     # Get the directory where the script is running from
@@ -43,7 +44,8 @@ function New-Shortcut {
 }
 
 # Example usage of the function
-New-Shortcut -ShortcutName "Name of shortcut.lnk" `
+New-Shortcut -ShortcutName "Your App.lnk" `
              -TargetPath "https://www.jsasd.org" `
-             -IconStoragePath "C:\ProgramData\YourProgram\Icons" `
-             -IconName "Icon.ico"
+             -IconStoragePath "C:\ProgramData\YourApp\Icons" `
+             -IconName "Icon.ico" `
+             #-ShortcutDestination "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\YourApp"

@@ -6,11 +6,12 @@ function Remove-Shortcut {
     param (
         [string]$ShortcutName,
         [string]$IconStoragePath,
-        [string]$IconName
+        [string]$IconName,
+        [string]$ShortcutDestination = "$env:PUBLIC\Desktop"
     )
 
     # Define the path of the shortcut and icon to be removed
-    $ShortcutPath = "$env:PUBLIC\Desktop\$ShortcutName"
+    $ShortcutPath = Join-Path -Path $ShortcutDestination -ChildPath $ShortcutName
     $IconPath = Join-Path -Path $IconStoragePath -ChildPath $IconName
 
     # Check if the shortcut exists and remove it
@@ -31,6 +32,7 @@ function Remove-Shortcut {
 }
 
 # Example usage of the function
-Remove-Shortcut -ShortcutName "Name of shortcut.lnk" `
-                -IconStoragePath "C:\ProgramData\YourProgram\Icons" `
+Remove-Shortcut -ShortcutName "Your app.lnk" `
+                -IconStoragePath "C:\ProgramData\YourApp\Icons" `
                 -IconName "Icon.ico"
+                #-ShortcutDestination "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\YourApp"

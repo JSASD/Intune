@@ -14,6 +14,25 @@ The following function parameters can be set:
  - `$TargetPath`: The URL / path to the program you want to open.
  - `$IconStoragePath`: Where you want to locally store the icon for the shortcut, must be accessible by the script at runtime.
  - `$IconName`: Name of the icon in the script directory.
+ - [Optional] `$ShortcutDestination`: Where the shortcut should be placed after creation
+
+## Examples
+### Using default destination
+```PowerShell
+New-Shortcut -ShortcutName "Your App.lnk" `
+             -TargetPath "https://www.jsasd.org" `
+             -IconStoragePath "C:\ProgramData\YourApp\Icons" `
+             -IconName "Icon.ico"
+```
+
+### Using custom destination
+```PowerShell
+New-Shortcut -ShortcutName "Your App.lnk" `
+             -TargetPath "https://www.jsasd.org" `
+             -IconStoragePath "C:\ProgramData\YourApp\Icons" `
+             -IconName "Icon.ico" `
+             -ShortcutDestination "C:\Users\YourUser\Desktop"
+```
 
 Run the script as normal, no arguments are needed.
 
