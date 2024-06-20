@@ -1,18 +1,16 @@
 # Uninstall-Shortcut.ps1
-# Removes the created shortcut from the public desktop
+# Removes the created shortcut from the public desktop and the specified icon directory
 # JSASD Technology Department
 
 function Remove-Shortcut {
     param (
         [string]$ShortcutName,
-        [string]$IconStoragePath,
-        [string]$IconName,
-        [string]$ShortcutDestination = "$env:PUBLIC\Desktop"
+        [string]$ShortcutDestination = "$env:PUBLIC\Desktop",
+        [string]$IconDirectory
     )
 
-    # Define the path of the shortcut and icon to be removed
+    # Define the path of the shortcut to be removed
     $ShortcutPath = Join-Path -Path $ShortcutDestination -ChildPath $ShortcutName
-    $IconPath = Join-Path -Path $IconStoragePath -ChildPath $IconName
 
     # Check if the shortcut exists and remove it
     if (Test-Path $ShortcutPath) {
@@ -22,21 +20,20 @@ function Remove-Shortcut {
         Write-Output "Shortcut does not exist."
     }
 
-    # Check if the icon exists and remove it
-    if (Test-Path $IconPath) {
-        Remove-Item $IconPath -Force
-        Write-Output "Icon removed successfully."
+    # Check if the icon directory exists and remove it
+    if (Test-Path $IconDirectory) {
+        Remove-Item $IconDirectory -Recurse -Force
+        Write-Output "Icon directory removed successfully."
     } else {
-        Write-Output "Icon does not exist."
+        Write-Output "Icon directory does not exist."
     }
 }
 
 # Example usage of the function
 Remove-Shortcut -ShortcutName "Your app.lnk" `
-                -IconStoragePath "C:\ProgramData\YourApp\Icons" `
-                -IconName "Icon.ico"
+                -ShortcutDestination "C:\Users\qhenry\Downloads" `
+                -IconDirectory "C:\ProgramData\YourApp"
 # To specify a custom destination for the shortcut:
 # Remove-Shortcut -ShortcutName "Your app.lnk" `
-#                 -IconStoragePath "C:\ProgramData\YourApp\Icons" `
-#                 -IconName "Icon.ico" `
+#                 -IconDirectory "C:\ProgramData\YourApp"
 #                 -ShortcutDestination "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\YourApp"
