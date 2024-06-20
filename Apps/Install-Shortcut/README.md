@@ -39,10 +39,9 @@ Run the script as normal, no arguments are needed.
 # Uninstall-Shortcut.ps1
 ## Usage
 tl;dr
- - The parameters available this script are identical to those that correspond in `Install-Shortcut.ps1`
- - Set them identically in this script in order to uninstall properly
+ - Set parameters that correspond directly to those in `New-Shortcut.ps1` to be the same values in this script.
 
 The following function parameters can be set:
  - `$ShortcutName`: Name of the shortcut on the desktop.
- - `$IconStoragePath`: Path to the icon that was copied to the local machine.
- - `$IconName`: Name of the icon in the local path.
+ - `$ShortcutDestination`: Where the shortcut is currently installed to.
+ - `$IconDirectory`: Directory in which the icon exists. This will delete the directory you specify.
