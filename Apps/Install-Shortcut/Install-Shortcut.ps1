@@ -44,11 +44,13 @@ function New-Shortcut {
 }
 
 # Example usage of the function
-Install-Shortcut -ShortcutName "Your app.lnk" `
+New-Shortcut    -ShortcutName "Your app.lnk" `
+                -TargetPath "C:\Program Files\YourApp\YourApp.exe"
                 -IconStoragePath "C:\ProgramData\YourApp\Icons" `
                 -IconName "Icon.ico"
 # To specify a custom destination for the shortcut:
-# Install-Shortcut -ShortcutName "Your app.lnk" `
+# New-Shortcut  -ShortcutName "Your app.lnk" `
+#                 -TargetPath "C:\Program Files\YourApp\YourApp.exe"
 #                 -IconStoragePath "C:\ProgramData\YourApp\Icons" `
 #                 -IconName "Icon.ico" `
 #                 -ShortcutDestination "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\YourApp"
