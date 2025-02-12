@@ -5,13 +5,14 @@
 # Retrieve the current username without the domain
 $currentUserFull = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
 $username = $currentUserFull.Split('\')[-1]
+$filterID = securly@yourdomain.com
 
 # Define the registry path and key name
 $registryPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
 $keyName = "AutoConfigURL"
 
 # Construct the expected value for the registry key with the username embedded in the URL
-$expectedValue = "https://useast2-www.securly.com/smart.pac?fid=securly@jsasd.org&user=$username@jsasd.org"
+$expectedValue = "https://useast2-www.securly.com/smart.pac?fid=$filterID&user=$username@jsasd.org"
 
 # Retrieve the current value, if it exists
 $currentValue = (Get-ItemProperty -Path $registryPath -Name $keyName -ErrorAction SilentlyContinue).$keyName
