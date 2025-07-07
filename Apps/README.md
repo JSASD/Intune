@@ -1,10 +1,50 @@
+# Definite requirements
+## IntuneWinAppUtil.exe
+ - Microsoft's `.intunewin` wrapper
+ - Packs installers and respective files into a single `.intunewin` file for upload to Intune
+ - [Download on GitHub](https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool)
+
+# Possible requirements
+## ServiceUI.exe
+ - Microsoft Deployment Toolkit's `ServiceUI.exe`
+   - Allows interactive PSADT sessions while being run as administrator
+   - [Install MDT](https://www.microsoft.com/en-us/download/details.aspx?id=54259)
+   - Go to `C:\Program Files\Microsoft Deployment Toolkit\Templates\Distribution\Tools\x64\`
+   - Copy the `ServiceUI.exe` file into the root of the PSADT project folder
+
+
 # Apps
+## ActivInspire
+### Info
+ - **Name:** ActivInspire
+ - **Version:** 3.x.y
+ - **Installer Type:** `.msi with PSADT`
+ - **Description:** Promethean ActivInspire interactive white board software
+
+### Requires
+ - [`ServiceUI.exe`](#serviceuiexe) in the root of the project folder
+
+### Deployment Info
+ - **Method:** Win32 PowerShell PSADT
+ - **Install command:**
+ ```powershell
+ ServiceUI.exe -process:explorer.exe Invoke-AppDeployToolkit.exe -DeploymentType Install -DeployMode Interactive
+ ```
+ - **Uninstall command:**
+ ```powershell
+ Invoke-AppDeployToolkit.exe -DeploymentType Uninstall -DeployMode Silent
+ ```
+
+
 ## Add-PrinterDriver
 ### Info
  - **Name:** Add-PrinterDriver
  - **Version:** 2.0
  - **Installer Type:** `.ps1 as .intunewin`
  - **Description:** Deploys a printer driver from a specified folder and .inf file.
+
+### Requires
+ - [`IntuneWinAppUtil.exe`](#intunewinapputilexe)
 
 ### Deployment Info
  - **Method:** Win32 PowerShell call
