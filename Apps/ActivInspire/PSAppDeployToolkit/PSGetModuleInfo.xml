@@ -1,0 +1,395 @@
+<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
+  <Obj RefId="0">
+    <TN RefId="0">
+      <T>Microsoft.PowerShell.Commands.PSRepositoryItemInfo</T>
+      <T>System.Management.Automation.PSCustomObject</T>
+      <T>System.Object</T>
+    </TN>
+    <MS>
+      <S N="Name">PSAppDeployToolkit</S>
+      <Version N="Version">4.0.6</Version>
+      <S N="Type">Module</S>
+      <S N="Description">Enterprise App Deployment, Simplified.</S>
+      <S N="Author">PSAppDeployToolkit Team (Sean Lillis Dan Cunningham Muhammad Mashwani Mitch Richters Dan Gough)</S>
+      <S N="CompanyName">sintaxasn</S>
+      <S N="Copyright">Copyright © 2025 PSAppDeployToolkit Team. All rights reserved.</S>
+      <DT N="PublishedDate">2025-02-24T05:55:38-05:00</DT>
+      <Obj N="InstalledDate" RefId="1">
+        <DT>2025-05-12T13:30:15.9288085-04:00</DT>
+        <MS>
+          <Obj N="DisplayHint" RefId="2">
+            <TN RefId="1">
+              <T>Microsoft.PowerShell.Commands.DisplayHintType</T>
+              <T>System.Enum</T>
+              <T>System.ValueType</T>
+              <T>System.Object</T>
+            </TN>
+            <ToString>DateTime</ToString>
+            <I32>2</I32>
+          </Obj>
+        </MS>
+      </Obj>
+      <Nil N="UpdatedDate" />
+      <URI N="LicenseUri">https://raw.githubusercontent.com/PSAppDeployToolkit/PSAppDeployToolkit/refs/heads/main/COPYING.Lesser</URI>
+      <URI N="ProjectUri">https://psappdeploytoolkit.com/</URI>
+      <URI N="IconUri">https://raw.githubusercontent.com/PSAppDeployToolkit/PSAppDeployToolkit/refs/heads/main/src/PSAppDeployToolkit/Assets/AppIcon.png</URI>
+      <Obj N="Tags" RefId="3">
+        <TN RefId="2">
+          <T>System.Object[]</T>
+          <T>System.Array</T>
+          <T>System.Object</T>
+        </TN>
+        <LST>
+          <S>psappdeploytoolkit</S>
+          <S>adt</S>
+          <S>psadt</S>
+          <S>appdeployment</S>
+          <S>appdeploytoolkit</S>
+          <S>appdeploy</S>
+          <S>deployment</S>
+          <S>toolkit</S>
+          <S>PSModule</S>
+        </LST>
+      </Obj>
+      <Obj N="Includes" RefId="4">
+        <TN RefId="3">
+          <T>System.Collections.Hashtable</T>
+          <T>System.Object</T>
+        </TN>
+        <DCT>
+          <En>
+            <S N="Key">Function</S>
+            <Obj N="Value" RefId="5">
+              <TNRef RefId="2" />
+              <LST>
+                <S>Add-ADTEdgeExtension</S>
+                <S>Add-ADTSessionClosingCallback</S>
+                <S>Add-ADTSessionFinishingCallback</S>
+                <S>Add-ADTSessionOpeningCallback</S>
+                <S>Add-ADTSessionStartingCallback</S>
+                <S>Block-ADTAppExecution</S>
+                <S>Close-ADTInstallationProgress</S>
+                <S>Close-ADTSession</S>
+                <S>Complete-ADTFunction</S>
+                <S>Convert-ADTRegistryPath</S>
+                <S>Convert-ADTValuesFromRemainingArguments</S>
+                <S>Convert-ADTValueType</S>
+                <S>ConvertTo-ADTNTAccountOrSID</S>
+                <S>Copy-ADTContentToCache</S>
+                <S>Copy-ADTFile</S>
+                <S>Copy-ADTFileToUserProfiles</S>
+                <S>Disable-ADTTerminalServerInstallMode</S>
+                <S>Dismount-ADTWimFile</S>
+                <S>Enable-ADTTerminalServerInstallMode</S>
+                <S>Export-ADTEnvironmentTableToSessionState</S>
+                <S>Get-ADTBoundParametersAndDefaultValues</S>
+                <S>Get-ADTCommandTable</S>
+                <S>Get-ADTConfig</S>
+                <S>Get-ADTDeferHistory</S>
+                <S>Get-ADTEnvironment</S>
+                <S>Get-ADTEnvironmentTable</S>
+                <S>Get-ADTFileVersion</S>
+                <S>Get-ADTFreeDiskSpace</S>
+                <S>Get-ADTIniValue</S>
+                <S>Get-ADTApplication</S>
+                <S>Get-ADTLoggedOnUser</S>
+                <S>Get-ADTMsiExitCodeMessage</S>
+                <S>Get-ADTMsiTableProperty</S>
+                <S>Get-ADTObjectProperty</S>
+                <S>Get-ADTPEFileArchitecture</S>
+                <S>Get-ADTPendingReboot</S>
+                <S>Get-ADTPowerShellProcessPath</S>
+                <S>Get-ADTPresentationSettingsEnabledUsers</S>
+                <S>Get-ADTRegistryKey</S>
+                <S>Get-ADTRunAsActiveUser</S>
+                <S>Get-ADTSchedulerTask</S>
+                <S>Get-ADTServiceStartMode</S>
+                <S>Get-ADTSession</S>
+                <S>Get-ADTShortcut</S>
+                <S>Get-ADTStringTable</S>
+                <S>Get-ADTOperatingSystemInfo</S>
+                <S>Get-ADTUniversalDate</S>
+                <S>Get-ADTUserProfiles</S>
+                <S>Get-ADTWindowTitle</S>
+                <S>Initialize-ADTFunction</S>
+                <S>Initialize-ADTModule</S>
+                <S>Install-ADTMSUpdates</S>
+                <S>Install-ADTSCCMSoftwareUpdates</S>
+                <S>Invoke-ADTAllUsersRegistryAction</S>
+                <S>Invoke-ADTCommandWithRetries</S>
+                <S>Invoke-ADTRegSvr32</S>
+                <S>Invoke-ADTFunctionErrorHandler</S>
+                <S>Invoke-ADTObjectMethod</S>
+                <S>Invoke-ADTSCCMTask</S>
+                <S>Mount-ADTWimFile</S>
+                <S>New-ADTErrorRecord</S>
+                <S>New-ADTFolder</S>
+                <S>New-ADTMsiTransform</S>
+                <S>New-ADTShortcut</S>
+                <S>New-ADTTemplate</S>
+                <S>New-ADTValidateScriptErrorRecord</S>
+                <S>New-ADTZipFile</S>
+                <S>Open-ADTSession</S>
+                <S>Out-ADTPowerShellEncodedCommand</S>
+                <S>Register-ADTDll</S>
+                <S>Remove-ADTContentFromCache</S>
+                <S>Remove-ADTEdgeExtension</S>
+                <S>Remove-ADTFile</S>
+                <S>Remove-ADTFileFromUserProfiles</S>
+                <S>Remove-ADTFolder</S>
+                <S>Uninstall-ADTApplication</S>
+                <S>Remove-ADTInvalidFileNameChars</S>
+                <S>Remove-ADTRegistryKey</S>
+                <S>Remove-ADTSessionClosingCallback</S>
+                <S>Remove-ADTSessionFinishingCallback</S>
+                <S>Remove-ADTSessionOpeningCallback</S>
+                <S>Remove-ADTSessionStartingCallback</S>
+                <S>Reset-ADTDeferHistory</S>
+                <S>Resolve-ADTErrorRecord</S>
+                <S>Send-ADTKeys</S>
+                <S>Set-ADTActiveSetup</S>
+                <S>Set-ADTDeferHistory</S>
+                <S>Set-ADTIniValue</S>
+                <S>Set-ADTItemPermission</S>
+                <S>Set-ADTMsiProperty</S>
+                <S>Set-ADTPowerShellCulture</S>
+                <S>Set-ADTRegistryKey</S>
+                <S>Set-ADTServiceStartMode</S>
+                <S>Set-ADTShortcut</S>
+                <S>Show-ADTBalloonTip</S>
+                <S>Show-ADTDialogBox</S>
+                <S>Show-ADTHelpConsole</S>
+                <S>Show-ADTInstallationProgress</S>
+                <S>Show-ADTInstallationPrompt</S>
+                <S>Show-ADTInstallationRestartPrompt</S>
+                <S>Show-ADTInstallationWelcome</S>
+                <S>Start-ADTMsiProcess</S>
+                <S>Start-ADTMspProcess</S>
+                <S>Start-ADTProcess</S>
+                <S>Start-ADTProcessAsUser</S>
+                <S>Start-ADTServiceAndDependencies</S>
+                <S>Stop-ADTServiceAndDependencies</S>
+                <S>Test-ADTBattery</S>
+                <S>Test-ADTCallerIsAdmin</S>
+                <S>Test-ADTMicrophoneInUse</S>
+                <S>Test-ADTModuleInitialized</S>
+                <S>Test-ADTMSUpdates</S>
+                <S>Test-ADTMutexAvailability</S>
+                <S>Test-ADTNetworkConnection</S>
+                <S>Test-ADTOobeCompleted</S>
+                <S>Test-ADTPowerPoint</S>
+                <S>Test-ADTRegistryValue</S>
+                <S>Test-ADTServiceExists</S>
+                <S>Test-ADTSessionActive</S>
+                <S>Test-ADTUserIsBusy</S>
+                <S>Unblock-ADTAppExecution</S>
+                <S>Unregister-ADTDll</S>
+                <S>Update-ADTDesktop</S>
+                <S>Update-ADTEnvironmentPsProvider</S>
+                <S>Update-ADTGroupPolicy</S>
+                <S>Write-ADTLogEntry</S>
+              </LST>
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">RoleCapability</S>
+            <Obj N="Value" RefId="6">
+              <TNRef RefId="2" />
+              <LST />
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">Cmdlet</S>
+            <Ref N="Value" RefId="6" />
+          </En>
+          <En>
+            <S N="Key">Workflow</S>
+            <Ref N="Value" RefId="6" />
+          </En>
+          <En>
+            <S N="Key">DscResource</S>
+            <Ref N="Value" RefId="6" />
+          </En>
+          <En>
+            <S N="Key">Command</S>
+            <Obj N="Value" RefId="7">
+              <TNRef RefId="2" />
+              <LST>
+                <S>Add-ADTEdgeExtension</S>
+                <S>Add-ADTSessionClosingCallback</S>
+                <S>Add-ADTSessionFinishingCallback</S>
+                <S>Add-ADTSessionOpeningCallback</S>
+                <S>Add-ADTSessionStartingCallback</S>
+                <S>Block-ADTAppExecution</S>
+                <S>Close-ADTInstallationProgress</S>
+                <S>Close-ADTSession</S>
+                <S>Complete-ADTFunction</S>
+                <S>Convert-ADTRegistryPath</S>
+                <S>Convert-ADTValuesFromRemainingArguments</S>
+                <S>Convert-ADTValueType</S>
+                <S>ConvertTo-ADTNTAccountOrSID</S>
+                <S>Copy-ADTContentToCache</S>
+                <S>Copy-ADTFile</S>
+                <S>Copy-ADTFileToUserProfiles</S>
+                <S>Disable-ADTTerminalServerInstallMode</S>
+                <S>Dismount-ADTWimFile</S>
+                <S>Enable-ADTTerminalServerInstallMode</S>
+                <S>Export-ADTEnvironmentTableToSessionState</S>
+                <S>Get-ADTBoundParametersAndDefaultValues</S>
+                <S>Get-ADTCommandTable</S>
+                <S>Get-ADTConfig</S>
+                <S>Get-ADTDeferHistory</S>
+                <S>Get-ADTEnvironment</S>
+                <S>Get-ADTEnvironmentTable</S>
+                <S>Get-ADTFileVersion</S>
+                <S>Get-ADTFreeDiskSpace</S>
+                <S>Get-ADTIniValue</S>
+                <S>Get-ADTApplication</S>
+                <S>Get-ADTLoggedOnUser</S>
+                <S>Get-ADTMsiExitCodeMessage</S>
+                <S>Get-ADTMsiTableProperty</S>
+                <S>Get-ADTObjectProperty</S>
+                <S>Get-ADTPEFileArchitecture</S>
+                <S>Get-ADTPendingReboot</S>
+                <S>Get-ADTPowerShellProcessPath</S>
+                <S>Get-ADTPresentationSettingsEnabledUsers</S>
+                <S>Get-ADTRegistryKey</S>
+                <S>Get-ADTRunAsActiveUser</S>
+                <S>Get-ADTSchedulerTask</S>
+                <S>Get-ADTServiceStartMode</S>
+                <S>Get-ADTSession</S>
+                <S>Get-ADTShortcut</S>
+                <S>Get-ADTStringTable</S>
+                <S>Get-ADTOperatingSystemInfo</S>
+                <S>Get-ADTUniversalDate</S>
+                <S>Get-ADTUserProfiles</S>
+                <S>Get-ADTWindowTitle</S>
+                <S>Initialize-ADTFunction</S>
+                <S>Initialize-ADTModule</S>
+                <S>Install-ADTMSUpdates</S>
+                <S>Install-ADTSCCMSoftwareUpdates</S>
+                <S>Invoke-ADTAllUsersRegistryAction</S>
+                <S>Invoke-ADTCommandWithRetries</S>
+                <S>Invoke-ADTRegSvr32</S>
+                <S>Invoke-ADTFunctionErrorHandler</S>
+                <S>Invoke-ADTObjectMethod</S>
+                <S>Invoke-ADTSCCMTask</S>
+                <S>Mount-ADTWimFile</S>
+                <S>New-ADTErrorRecord</S>
+                <S>New-ADTFolder</S>
+                <S>New-ADTMsiTransform</S>
+                <S>New-ADTShortcut</S>
+                <S>New-ADTTemplate</S>
+                <S>New-ADTValidateScriptErrorRecord</S>
+                <S>New-ADTZipFile</S>
+                <S>Open-ADTSession</S>
+                <S>Out-ADTPowerShellEncodedCommand</S>
+                <S>Register-ADTDll</S>
+                <S>Remove-ADTContentFromCache</S>
+                <S>Remove-ADTEdgeExtension</S>
+                <S>Remove-ADTFile</S>
+                <S>Remove-ADTFileFromUserProfiles</S>
+                <S>Remove-ADTFolder</S>
+                <S>Uninstall-ADTApplication</S>
+                <S>Remove-ADTInvalidFileNameChars</S>
+                <S>Remove-ADTRegistryKey</S>
+                <S>Remove-ADTSessionClosingCallback</S>
+                <S>Remove-ADTSessionFinishingCallback</S>
+                <S>Remove-ADTSessionOpeningCallback</S>
+                <S>Remove-ADTSessionStartingCallback</S>
+                <S>Reset-ADTDeferHistory</S>
+                <S>Resolve-ADTErrorRecord</S>
+                <S>Send-ADTKeys</S>
+                <S>Set-ADTActiveSetup</S>
+                <S>Set-ADTDeferHistory</S>
+                <S>Set-ADTIniValue</S>
+                <S>Set-ADTItemPermission</S>
+                <S>Set-ADTMsiProperty</S>
+                <S>Set-ADTPowerShellCulture</S>
+                <S>Set-ADTRegistryKey</S>
+                <S>Set-ADTServiceStartMode</S>
+                <S>Set-ADTShortcut</S>
+                <S>Show-ADTBalloonTip</S>
+                <S>Show-ADTDialogBox</S>
+                <S>Show-ADTHelpConsole</S>
+                <S>Show-ADTInstallationProgress</S>
+                <S>Show-ADTInstallationPrompt</S>
+                <S>Show-ADTInstallationRestartPrompt</S>
+                <S>Show-ADTInstallationWelcome</S>
+                <S>Start-ADTMsiProcess</S>
+                <S>Start-ADTMspProcess</S>
+                <S>Start-ADTProcess</S>
+                <S>Start-ADTProcessAsUser</S>
+                <S>Start-ADTServiceAndDependencies</S>
+                <S>Stop-ADTServiceAndDependencies</S>
+                <S>Test-ADTBattery</S>
+                <S>Test-ADTCallerIsAdmin</S>
+                <S>Test-ADTMicrophoneInUse</S>
+                <S>Test-ADTModuleInitialized</S>
+                <S>Test-ADTMSUpdates</S>
+                <S>Test-ADTMutexAvailability</S>
+                <S>Test-ADTNetworkConnection</S>
+                <S>Test-ADTOobeCompleted</S>
+                <S>Test-ADTPowerPoint</S>
+                <S>Test-ADTRegistryValue</S>
+                <S>Test-ADTServiceExists</S>
+                <S>Test-ADTSessionActive</S>
+                <S>Test-ADTUserIsBusy</S>
+                <S>Unblock-ADTAppExecution</S>
+                <S>Unregister-ADTDll</S>
+                <S>Update-ADTDesktop</S>
+                <S>Update-ADTEnvironmentPsProvider</S>
+                <S>Update-ADTGroupPolicy</S>
+                <S>Write-ADTLogEntry</S>
+              </LST>
+            </Obj>
+          </En>
+        </DCT>
+      </Obj>
+      <Nil N="PowerShellGetFormatVersion" />
+      <S N="ReleaseNotes">https://github.com/psappdeploytoolkit/psappdeploytoolkit/releases/latest</S>
+      <Obj N="Dependencies" RefId="8">
+        <TNRef RefId="2" />
+        <LST />
+      </Obj>
+      <S N="RepositorySourceLocation">https://www.powershellgallery.com/api/v2</S>
+      <S N="Repository">PSGallery</S>
+      <S N="PackageManagementProvider">NuGet</S>
+      <Obj N="AdditionalMetadata" RefId="9">
+        <TN RefId="4">
+          <T>System.Management.Automation.PSCustomObject</T>
+          <T>System.Object</T>
+        </TN>
+        <MS>
+          <S N="copyright">Copyright © 2025 PSAppDeployToolkit Team. All rights reserved.</S>
+          <S N="description">Enterprise App Deployment, Simplified.</S>
+          <S N="requireLicenseAcceptance">False</S>
+          <S N="releaseNotes">https://github.com/psappdeploytoolkit/psappdeploytoolkit/releases/latest</S>
+          <S N="isLatestVersion">True</S>
+          <S N="isAbsoluteLatestVersion">True</S>
+          <S N="versionDownloadCount">49888</S>
+          <S N="downloadCount">1186347</S>
+          <S N="packageSize">5921006</S>
+          <S N="published">2/24/2025 5:55:38 AM -05:00</S>
+          <S N="created">2/24/2025 5:55:38 AM -05:00</S>
+          <S N="lastUpdated">5/12/2025 5:30:00 PM -04:00</S>
+          <S N="tags">psappdeploytoolkit adt psadt appdeployment appdeploytoolkit appdeploy deployment toolkit PSModule PSFunction_Add-ADTEdgeExtension PSCommand_Add-ADTEdgeExtension PSFunction_Add-ADTSessionClosingCallback PSCommand_Add-ADTSessionClosingCallback PSFunction_Add-ADTSessionFinishingCallback PSCommand_Add-ADTSessionFinishingCallback PSFunction_Add-ADTSessionOpeningCallback PSCommand_Add-ADTSessionOpeningCallback PSFunction_Add-ADTSessionStartingCallback PSCommand_Add-ADTSessionStartingCallback PSFunction_Block-ADTAppExecution PSCommand_Block-ADTAppExecution PSFunction_Close-ADTInstallationProgress PSCommand_Close-ADTInstallationProgress PSFunction_Close-ADTSession PSCommand_Close-ADTSession PSFunction_Complete-ADTFunction PSCommand_Complete-ADTFunction PSFunction_Convert-ADTRegistryPath PSCommand_Convert-ADTRegistryPath PSFunction_Convert-ADTValuesFromRemainingArguments PSCommand_Convert-ADTValuesFromRemainingArguments PSFunction_Convert-ADTValueType PSCommand_Convert-ADTValueType PSFunction_ConvertTo-ADTNTAccountOrSID PSCommand_ConvertTo-ADTNTAccountOrSID PSFunction_Copy-ADTContentToCache PSCommand_Copy-ADTContentToCache PSFunction_Copy-ADTFile PSCommand_Copy-ADTFile PSFunction_Copy-ADTFileToUserProfiles PSCommand_Copy-ADTFileToUserProfiles PSFunction_Disable-ADTTerminalServerInstallMode PSCommand_Disable-ADTTerminalServerInstallMode PSFunction_Dismount-ADTWimFile PSCommand_Dismount-ADTWimFile PSFunction_Enable-ADTTerminalServerInstallMode PSCommand_Enable-ADTTerminalServerInstallMode PSFunction_Export-ADTEnvironmentTableToSessionState PSCommand_Export-ADTEnvironmentTableToSessionState PSFunction_Get-ADTBoundParametersAndDefaultValues PSCommand_Get-ADTBoundParametersAndDefaultValues PSFunction_Get-ADTCommandTable PSCommand_Get-ADTCommandTable PSFunction_Get-ADTConfig PSCommand_Get-ADTConfig PSFunction_Get-ADTDeferHistory PSCommand_Get-ADTDeferHistory PSFunction_Get-ADTEnvironment PSCommand_Get-ADTEnvironment PSFunction_Get-ADTEnvironmentTable PSCommand_Get-ADTEnvironmentTable PSFunction_Get-ADTFileVersion PSCommand_Get-ADTFileVersion PSFunction_Get-ADTFreeDiskSpace PSCommand_Get-ADTFreeDiskSpace PSFunction_Get-ADTIniValue PSCommand_Get-ADTIniValue PSFunction_Get-ADTApplication PSCommand_Get-ADTApplication PSFunction_Get-ADTLoggedOnUser PSCommand_Get-ADTLoggedOnUser PSFunction_Get-ADTMsiExitCodeMessage PSCommand_Get-ADTMsiExitCodeMessage PSFunction_Get-ADTMsiTableProperty PSCommand_Get-ADTMsiTableProperty PSFunction_Get-ADTObjectProperty PSCommand_Get-ADTObjectProperty PSFunction_Get-ADTPEFileArchitecture PSCommand_Get-ADTPEFileArchitecture PSFunction_Get-ADTPendingReboot PSCommand_Get-ADTPendingReboot PSFunction_Get-ADTPowerShellProcessPath PSCommand_Get-ADTPowerShellProcessPath PSFunction_Get-ADTPresentationSettingsEnabledUsers PSCommand_Get-ADTPresentationSettingsEnabledUsers PSFunction_Get-ADTRegistryKey PSCommand_Get-ADTRegistryKey PSFunction_Get-ADTRunAsActiveUser PSCommand_Get-ADTRunAsActiveUser PSFunction_Get-ADTSchedulerTask PSCommand_Get-ADTSchedulerTask PSFunction_Get-ADTServiceStartMode PSCommand_Get-ADTServiceStartMode PSFunction_Get-ADTSession PSCommand_Get-ADTSession PSFunction_Get-ADTShortcut PSCommand_Get-ADTShortcut PSFunction_Get-ADTStringTable PSCommand_Get-ADTStringTable PSFunction_Get-ADTOperatingSystemInfo PSCommand_Get-ADTOperatingSystemInfo PSFunction_Get-ADTUniversalDate PSCommand_Get-ADTUniversalDate PSFunction_Get-ADTUserProfiles PSCommand_Get-ADTUserProfiles PSFunction_Get-ADTWindowTitle PSCommand_Get-ADTWindowTitle PSFunction_Initialize-ADTFunction PSCommand_Initialize-ADTFunction PSFunction_Initialize-ADTModule PSCommand_Initialize-ADTModule PSFunction_Install-ADTMSUpdates PSCommand_Install-ADTMSUpdates PSFunction_Install-ADTSCCMSoftwareUpdates PSCommand_Install-ADTSCCMSoftwareUpdates PSFunction_Invoke-ADTAllUsersRegistryAction PSCommand_Invoke-ADTAllUsersRegistryAction PSFunction_Invoke-ADTCommandWithRetries PSCommand_Invoke-ADTCommandWithRetries PSFunction_Invoke-ADTRegSvr32 PSCommand_Invoke-ADTRegSvr32 PSFunction_Invoke-ADTFunctionErrorHandler PSCommand_Invoke-ADTFunctionErrorHandler PSFunction_Invoke-ADTObjectMethod PSCommand_Invoke-ADTObjectMethod PSFunction_Invoke-ADTSCCMTask PSCommand_Invoke-ADTSCCMTask PSFunction_Mount-ADTWimFile PSCommand_Mount-ADTWimFile PSFunction_New-ADTErrorRecord PSCommand_New-ADTErrorRecord PSFunction_New-ADTFolder PSCommand_New-ADTFolder PSFunction_New-ADTMsiTransform PSCommand_New-ADTMsiTransform PSFunction_New-ADTShortcut PSCommand_New-ADTShortcut PSFunction_New-ADTTemplate PSCommand_New-ADTTemplate PSFunction_New-ADTValidateScriptErrorRecord PSCommand_New-ADTValidateScriptErrorRecord PSFunction_New-ADTZipFile PSCommand_New-ADTZipFile PSFunction_Open-ADTSession PSCommand_Open-ADTSession PSFunction_Out-ADTPowerShellEncodedCommand PSCommand_Out-ADTPowerShellEncodedCommand PSFunction_Register-ADTDll PSCommand_Register-ADTDll PSFunction_Remove-ADTContentFromCache PSCommand_Remove-ADTContentFromCache PSFunction_Remove-ADTEdgeExtension PSCommand_Remove-ADTEdgeExtension PSFunction_Remove-ADTFile PSCommand_Remove-ADTFile PSFunction_Remove-ADTFileFromUserProfiles PSCommand_Remove-ADTFileFromUserProfiles PSFunction_Remove-ADTFolder PSCommand_Remove-ADTFolder PSFunction_Uninstall-ADTApplication PSCommand_Uninstall-ADTApplication PSFunction_Remove-ADTInvalidFileNameChars PSCommand_Remove-ADTInvalidFileNameChars PSFunction_Remove-ADTRegistryKey PSCommand_Remove-ADTRegistryKey PSFunction_Remove-ADTSessionClosingCallback PSCommand_Remove-ADTSessionClosingCallback PSFunction_Remove-ADTSessionFinishingCallback PSCommand_Remove-ADTSessionFinishingCallback PSFunction_Remove-ADTSessionOpeningCallback PSCommand_Remove-ADTSessionOpeningCallback PSFunction_Remove-ADTSessionStartingCallback PSCommand_Remove-ADTSessionStartingCallback PSFunction_Reset-ADTDeferHistory PSCommand_Reset-ADTDeferHistory PSFunction_Resolve-ADTErrorRecord PSCommand_Resolve-ADTErrorRecord PSFunction_Send-ADTKeys PSCommand_Send-ADTKeys PSFunction_Set-ADTActiveSetup PSCommand_Set-ADTActiveSetup PSFunction_Set-ADTDeferHistory PSCommand_Set-ADTDeferHistory PSFunction_Set-ADTIniValue PSCommand_Set-ADTIniValue PSFunction_Set-ADTItemPermission PSCommand_Set-ADTItemPermission PSFunction_Set-ADTMsiProperty PSCommand_Set-ADTMsiProperty PSFunction_Set-ADTPowerShellCulture PSCommand_Set-ADTPowerShellCulture PSFunction_Set-ADTRegistryKey PSCommand_Set-ADTRegistryKey PSFunction_Set-ADTServiceStartMode PSCommand_Set-ADTServiceStartMode PSFunction_Set-ADTShortcut PSCommand_Set-ADTShortcut PSFunction_Show-ADTBalloonTip PSCommand_Show-ADTBalloonTip PSFunction_Show-ADTDialogBox PSCommand_Show-ADTDialogBox PSFunction_Show-ADTHelpConsole PSCommand_Show-ADTHelpConsole PSFunction_Show-ADTInstallationProgress PSCommand_Show-ADTInstallationProgress PSFunction_Show-ADTInstallationPrompt PSCommand_Show-ADTInstallationPrompt PSFunction_Show-ADTInstallationRestartPrompt PSCommand_Show-ADTInstallationRestartPrompt PSFunction_Show-ADTInstallationWelcome PSCommand_Show-ADTInstallationWelcome PSFunction_Start-ADTMsiProcess PSCommand_Start-ADTMsiProcess PSFunction_Start-ADTMspProcess PSCommand_Start-ADTMspProcess PSFunction_Start-ADTProcess PSCommand_Start-ADTProcess PSFunction_Start-ADTProcessAsUser PSCommand_Start-ADTProcessAsUser PSFunction_Start-ADTServiceAndDependencies PSCommand_Start-ADTServiceAndDependencies PSFunction_Stop-ADTServiceAndDependencies PSCommand_Stop-ADTServiceAndDependencies PSFunction_Test-ADTBattery PSCommand_Test-ADTBattery PSFunction_Test-ADTCallerIsAdmin PSCommand_Test-ADTCallerIsAdmin PSFunction_Test-ADTMicrophoneInUse PSCommand_Test-ADTMicrophoneInUse PSFunction_Test-ADTModuleInitialized PSCommand_Test-ADTModuleInitialized PSFunction_Test-ADTMSUpdates PSCommand_Test-ADTMSUpdates PSFunction_Test-ADTMutexAvailability PSCommand_Test-ADTMutexAvailability PSFunction_Test-ADTNetworkConnection PSCommand_Test-ADTNetworkConnection PSFunction_Test-ADTOobeCompleted PSCommand_Test-ADTOobeCompleted PSFunction_Test-ADTPowerPoint PSCommand_Test-ADTPowerPoint PSFunction_Test-ADTRegistryValue PSCommand_Test-ADTRegistryValue PSFunction_Test-ADTServiceExists PSCommand_Test-ADTServiceExists PSFunction_Test-ADTSessionActive PSCommand_Test-ADTSessionActive PSFunction_Test-ADTUserIsBusy PSCommand_Test-ADTUserIsBusy PSFunction_Unblock-ADTAppExecution PSCommand_Unblock-ADTAppExecution PSFunction_Unregister-ADTDll PSCommand_Unregister-ADTDll PSFunction_Update-ADTDesktop PSCommand_Update-ADTDesktop PSFunction_Update-ADTEnvironmentPsProvider PSCommand_Update-ADTEnvironmentPsProvider PSFunction_Update-ADTGroupPolicy PSCommand_Update-ADTGroupPolicy PSFunction_Write-ADTLogEntry PSCommand_Write-ADTLogEntry PSIncludes_Function</S>
+          <S N="developmentDependency">False</S>
+          <S N="updated">2025-05-12T17:30:00Z</S>
+          <S N="NormalizedVersion">4.0.6</S>
+          <S N="Authors">PSAppDeployToolkit Team (Sean Lillis Dan Cunningham Muhammad Mashwani Mitch Richters Dan Gough)</S>
+          <S N="IsPrerelease">false</S>
+          <S N="ItemType">Module</S>
+          <S N="FileList">PSAppDeployToolkit.nuspec|Templates\New-ADTFunction.ps1|COPYING.Lesser|PSAppDeployToolkit.psm1|Assets\Banner.Classic.png|bin\AMD64\handle\handle.exe|bin\ARM64\handle\handle.exe|bin\i386\handle\handle.exe|Frontend\v3\COPYING.Lesser|Frontend\v3\AppDeployToolkit\AppDeployToolkitExtensions.ps1|Frontend\v3\AppDeployToolkit\COPYING.Lesser|Frontend\v4\Invoke-AppDeployToolkit.exe|Frontend\v4\PSAppDeployToolkit.Extensions\COPYING.Lesser|Frontend\v4\PSAppDeployToolkit.Extensions\PSAppDeployToolkit.Extensions.psm1|lib\PSADT.UserInterface.dll|lib\Wpf.Ui.Abstractions.dll|lib\Wpf.Ui.dll|lib\Wpf.Ui.Tray.xml|Strings\strings.psd1|Strings\cz\strings.psd1|Strings\de\strings.psd1|Strings\es\strings.psd1|Strings\fr\strings.psd1|Strings\hu\strings.psd1|Strings\ja\strings.psd1|Strings\nb\strings.psd1|Strings\pl\strings.psd1|Strings\pt-br\strings.psd1|Strings\sk\strings.psd1|Strings\tr\strings.psd1|Strings\zh-hans\strings.psd1|Strings\zh-hant\strings.psd1|PSAppDeployToolkit.cer|PSAppDeployToolkit.psd1|Assets\AppIcon.png|bin\AMD64\handle\Eula.txt|bin\ARM64\handle\Eula.txt|bin\i386\handle\Eula.txt|Config\config.psd1|Frontend\v3\Deploy-Application.exe|Frontend\v3\AppDeployToolkit\AppDeployToolkitMain.ps1|Frontend\v4\COPYING.Lesser|Frontend\v4\Invoke-AppDeployToolkit.ps1|Frontend\v4\PSAppDeployToolkit.Extensions\PSAppDeployToolkit.Extensions.psd1|lib\PSADT.dll|lib\System.ValueTuple.dll|lib\Wpf.Ui.Abstractions.xml|lib\Wpf.Ui.Tray.dll|lib\Wpf.Ui.xml|Strings\ar\strings.psd1|Strings\da\strings.psd1|Strings\el\strings.psd1|Strings\fi\strings.psd1|Strings\he\strings.psd1|Strings\it\strings.psd1|Strings\ko\strings.psd1|Strings\nl\strings.psd1|Strings\pt\strings.psd1|Strings\ru\strings.psd1|Strings\sv\strings.psd1</S>
+          <S N="GUID">8c3c366b-8606-4576-9f2d-4051144f7ca2</S>
+          <S N="PowerShellVersion">5.1.14393.0</S>
+          <S N="DotNetFrameworkVersion">4.6.2.0</S>
+          <S N="CLRVersion">4.0.30319.42000</S>
+          <S N="ProcessorArchitecture">None</S>
+          <S N="CompanyName">PSAppDeployToolkit Team</S>
+        </MS>
+      </Obj>
+      <S N="InstalledLocation">C:\Users\19qhe\OneDrive - Jersey Shore Area School District\Documents\PowerShell\Modules\PSAppDeployToolkit\4.0.6</S>
+    </MS>
+  </Obj>
+</Objs>

@@ -23,6 +23,8 @@
 
 ### Requires
  - [`ServiceUI.exe`](#serviceuiexe) in the root of the project folder
+ - ActivInspire `Netinstall` installation files (extracted MSI by running the installer on a local machine)
+ - Download ActivInspire here
 
 ### Deployment Info
  - **Method:** Win32 PowerShell PSADT
