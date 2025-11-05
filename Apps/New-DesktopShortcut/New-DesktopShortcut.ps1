@@ -4,14 +4,22 @@
 
 function New-Shortcut {
     param (
+        [switch]$Public,
         [string]$ShortcutName,
         [string]$TargetPath,
         [string]$IconStoragePath,
-        [string]$IconName,
-        [string]$ShortcutDestination = "C:\Users\Public\Desktop"
+        [string]$IconName
     )
 
-    # Paths
+    Write-Host "Public: $Public"
+
+    # Decide if shortcut is public based on -Public parameter
+    if ($Public) {
+        $ShortcutDestination = "$env:PUBLIC\Desktop"
+    } else {
+        $ShortcutDestination = [Environment]::GetFolderPath("Desktop")
+    }
+
     $ShortcutPath = Join-Path -Path $ShortcutDestination -ChildPath $ShortcutName
     $IconPath = Join-Path -Path $IconStoragePath -ChildPath $IconName
 
@@ -43,14 +51,16 @@ function New-Shortcut {
     $Shortcut.Save()
 }
 
+
 # Example usage of the function
+# Sending to the public desktop (MUST RUN IN SYSTEM CONTEXT)
 New-Shortcut    -ShortcutName "Your app.lnk" `
                 -TargetPath "C:\Program Files\YourApp\YourApp.exe" `
                 -IconStoragePath "C:\ProgramData\YourApp\Icons" `
-                -IconName "Icon.ico"
-# To specify a custom destination for the shortcut:
+                -IconName "Icon.ico" `
+                -Public
+# Sending to the current user's desktop (MUST RUN IN USER CONTEXT)
 # New-Shortcut  -ShortcutName "Your app.lnk" `
 #                 -TargetPath "C:\Program Files\YourApp\YourApp.exe" `
 #                 -IconStoragePath "C:\ProgramData\YourApp\Icons" `
 #                 -IconName "Icon.ico" `
-#                 -ShortcutDestination "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\YourApp"

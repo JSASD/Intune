@@ -10,28 +10,28 @@ Installs a shortcut to any URL / program on the Windows public desktop.
 Script contents are all bundled into a function. An example call is at the bottom.
 
 The following function parameters can be set:
+ - [Optional] `$Public`: Whether or not the icon will be placed on the public desktop.
  - `$ShortcutName`: Friendly name of the shortcut, this is what it will be called on the desktop.
  - `$TargetPath`: The URL / path to the program you want to open.
  - `$IconStoragePath`: Where you want to locally store the icon for the shortcut, must be accessible by the script at runtime.
  - `$IconName`: Name of the icon in the script directory.
- - [Optional] `$ShortcutDestination`: Where the shortcut should be placed after creation
 
 ## Examples
-### Using default destination
+### Placing on public desktop
 ```PowerShell
-New-Shortcut -ShortcutName "Your App.lnk" `
+New-Shortcut -Public `
+             -ShortcutName "Your App.lnk" `
              -TargetPath "https://www.jsasd.org" `
              -IconStoragePath "C:\ProgramData\YourApp\Icons" `
              -IconName "Icon.ico"
 ```
 
-### Using custom destination
+### Place on current user's desktop
 ```PowerShell
 New-Shortcut -ShortcutName "Your App.lnk" `
              -TargetPath "https://www.jsasd.org" `
              -IconStoragePath "C:\ProgramData\YourApp\Icons" `
              -IconName "Icon.ico" `
-             -ShortcutDestination "C:\Users\YourUser\Desktop"
 ```
 
 Run the script as normal, no arguments are needed.
