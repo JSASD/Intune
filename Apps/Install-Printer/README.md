@@ -23,6 +23,7 @@ Where:
 
 # Detection
 ## Registry
+```
 `Key`: `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Print\Printers\{Locally_Installed_Printer_Name}`
 `Name`: `{Locally_Installed_Printer_Name}`
 ```
