@@ -1,3 +1,6 @@
+$organization = "JSASD"
+$packageName = "VexCerts"
+
 $certsRoot = Join-Path $PSScriptRoot "certs"
 $storeLocation = "LocalMachine"
 
@@ -21,6 +24,9 @@ Get-ChildItem -Path $certsRoot -Directory | ForEach-Object {
             if ($existing) {
                 $store.Remove($existing)
                 Write-Host "Removed [$($_.Name)] from $storeLocation\$storeName"
+
+                Remove-Item -Path "HKLM:\SOFTWARE\$organization\$packageName" -Force -Recurse -ErrorAction SilentlyContinue
+                Write-Host "Removed registry entry for $packageName"
             } else {
                 Write-Host "Not found, skipping [$($_.Name)] in $storeLocation\$storeName"
             }

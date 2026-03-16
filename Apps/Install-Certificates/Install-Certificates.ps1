@@ -1,3 +1,7 @@
+$version = "1.0.0"
+$organization = "JSASD"
+$packageName = "VexCerts"
+
 $certsRoot = Join-Path $PSScriptRoot "certs"
 $storeLocation = "LocalMachine"
 
@@ -19,6 +23,10 @@ Get-ChildItem -Path $certsRoot -Directory | ForEach-Object {
             $store.Add($cert)
             $store.Close()
             Write-Host "Installed [$($_.Name)] -> $storeLocation\$storeName"
+            
+            Write-Host "Creating registry entry for version $version"
+            New-Item -Path "HKLM:\SOFTWARE\$organization\$packageName" -Force | Out-Null
+            Set-ItemProperty -Path "HKLM:\SOFTWARE\$organization\$packageName" -Name "version" -Value $version -Type String
         } catch {
             Write-Warning "Failed to install [$($_.Name)]: $_"
         }
