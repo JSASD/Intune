@@ -1,0 +1,9 @@
+# Ignore cert files
+certs/**/*.cer
+certs/**/*.crt
+certs/**/*.pfx
+certs/**/*.pem
+certs/**/*.p7b
+
+# But keep the placeholder files
+!certs/**/.gitkeep
